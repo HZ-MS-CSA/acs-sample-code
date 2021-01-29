@@ -1,5 +1,7 @@
 # acs-sample-code
 
+pip install pandas tqdm azure-communication-sms --pre
+
 MIT License
 
 Copyright (c) 2021 HZ-MS-CSA
@@ -22,3 +24,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+```python
+
+```
