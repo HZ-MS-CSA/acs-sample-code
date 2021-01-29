@@ -192,6 +192,7 @@ for origin_number in leased_numbers:
 # In[ ]:
 
 
+counter = 0
 problematic_numbers = []
 successful_numbers = []
 for origin_number in tqdm(number_dict):
@@ -203,9 +204,12 @@ for origin_number in tqdm(number_dict):
                 message=message,
                 send_sms_options=SendSmsOptions(enable_delivery_report=True))
             successful_numbers.append(dest_number)
+            counter += 1
         except Exception:
             problematic_number.append(dest_number)
-        time.sleep(rand.randint(1,3))
+        if counter == 50:
+            time.sleep(2)
+            counter = 0
 
 
 # In[ ]:
@@ -238,6 +242,14 @@ os.rename(f'{required_info_dir}message.txt',f'{archive_dir}message.txt')
 # In[ ]:
 
 
+# os.rename(input_filename.replace('./target_phone_numbers/',archive_dir), input_filename)
+# # os.rename(f'{required_info_dir}leased_numbers.txt',f'{archive_dir}leased_numbers.txt')
+# os.rename(f'{archive_dir}message.txt', f'{required_info_dir}message.txt')
+
+
+# In[ ]:
+
+
 summary = {
     'Message': message,
     'Successful Sent Numbers': successful_numbers,
@@ -250,10 +262,4 @@ summary = {
 
 with open(f"{output_dir}summary.txt",'a') as file:
     file.write(json.dumps(summary)+'\n')
-
-
-# In[ ]:
-
-
-
 
