@@ -209,7 +209,7 @@ for origin_number in tqdm(number_dict):
             successful_numbers.append(dest_number)
             counter += 1
         except Exception:
-            problematic_number.append(dest_number)
+            problematic_numbers.append(dest_number)
         if counter == 50:
             time.sleep(2)
             counter = 0
