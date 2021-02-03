@@ -1,4 +1,4 @@
-required_info/
-target_phone_numbers/
-output/
-archive/
+local-env/archive/
+local-env/output/
+local-env/required_info/
+local-env/target_phone_numbers/
