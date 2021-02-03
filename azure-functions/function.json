@@ -1,0 +1,12 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "acsBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "acs-blob/input_data.json",
+      "connection": "stor_connection_string"
+    }
+  ]
+}
