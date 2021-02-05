@@ -39,6 +39,7 @@ import glob
 import time
 import random as rand
 import json
+import re
 from azure.communication.sms import PhoneNumber
 from azure.communication.sms import SendSmsOptions
 from azure.communication.sms import SmsClient
@@ -163,7 +164,8 @@ for index in range(len(leased_numbers)):
 
 with open(f'{required_info_dir}message.txt','r') as file:
     messagelines = file.readlines()
-message = ' '.join(messagelines).replace('\n','')
+message = ''.join(messagelines)
+message = re.sub(r'\n+','\n',message)
 
 
 # ### Send Message
